@@ -13,25 +13,79 @@ Single-cycle gas turbine power plants generate electricity by using natural gas 
 ![download](https://user-images.githubusercontent.com/75095471/217403841-9d5596d8-0224-4a76-bbe3-97788a9600cd.png)
 
 # Algorithms Overview
-## Linear Regression:
-Linear regression is a simple and classic regression algorithm. It tries to fit a line to the data that minimizes the sum of the squared differences between the true values and the predicted values. The mathematical formula for linear regression can be represented as y = b0 + b1x1 + b2x2 + ... + bn*xn, where b0, b1, b2, ..., bn are the coefficients and x1, x2, ..., xn are the independent variables.
+Model Evaluation for Regression Task
+In this evaluation, eight different algorithms were used for a regression problem:
+<ul class="myUL">
+  <li>Decision Tree Regressor</li>
+  <li>Random Forest Regressor</li>
+  <li>K-Nearest Neighbors Regressor</li>
+   <li>Support Vector Regression (SVR)</li>
+  <li>CatBoost Regressor</li>
+  <li>XGBoost Regressor</li>
+  <li>Deep Learning Neural Network (MLP)</li>
+</ul>
 
-## Decision Tree:
-Decision tree is a simple and easy to interpret tree-based algorithm. It recursively splits the data into subsets based on the feature that provides the highest reduction in impurity. The mathematical formula for decision trees is based on entropy and information gain.
+Each model was fit to the training data and then used to make predictions on the test data. The evaluation metrics used were the R2-score and the Mean Absolute Error (MAE). The R2-score is a measure of how well the model fits the data, with a score of 1.0 indicating a perfect fit and a score of 0.0 indicating a poor fit. The MAE is a measure of the average error between the actual values and the predicted values.
+The results of the model evaluation are presented in the table below:
 
-## Random Forest:
-Random forest is an ensemble algorithm that uses multiple decision trees to make a prediction. The prediction is made by aggregating the predictions of each individual tree, typically by taking the average. Random forest improves upon decision trees by reducing overfitting and improving generalization.
+<table>
+  <tr>
+    <th>Model name</th>
+    <th>R2-score</th>
+    <th>MAE</th>
+    <th>Time (seconds)</th>
+  </tr>
+  <tr>
+    <td>Linear Regression</td>
+    <td>0.924769</td>
+    <td>3.669618</td>
+    <td>0.029593</td>
+  </tr>
+  <tr>
+    <td>Decision Tree</td>
+    <td>0.921349</td>
+    <td>3.313986</td>
+    <td>0.045285</td>
+  </tr>
+  <tr>
+    <td>Random Forest</td>
+    <td>0.955716</td>
+    <td>2.526763</td>
+    <td>2.827737</td>
+  </tr>
+  <tr>
+    <td>K-Nearest Neighbors</td>
+    <td>0.941989</td>
+    <td>3.001490</td>
+    <td>0.015856</td>
+  </tr>
+  <tr>
+    <td>SVR</td>
+    <td>0.936554</td>
+    <td>3.240146</td>
+    <td>1.661543</td>
+  </tr>
+  <tr>
+    <td>CatBoost</td>
+    <td>0.950686</td>
+    <td>2.768416</td>
+    <td>15.061745</td>
+  </tr>
+  <tr>
+    <td>XGBoost</td>
+    <td>0.943266</td>
+    <td>3.055684</td>
+    <td>0.577507</td>
+  </tr>
+  <tr>
+    <td>Deep Learning Neural Network</td>
+    <td>0.928563</td>
+    <td>3.521634</td>
+    <td>34.228411</td>
+  </tr>
+</table>
 
-# K-Nearest Neighbors:
- K-Nearest Neighbors is a simple and intuitive non-parametric algorithm. It predicts the target variable for a new sample based on the average of the k nearest samples in the training set. The mathematical formula for KNN is based on the Euclidean distance between samples.
+![download (5)](https://user-images.githubusercontent.com/75095471/218534817-5eac4552-5435-4dfb-9c71-6fb33bc4ad38.png)
 
-# Support Vector Regression:
- Support Vector Regression is a variation of Support Vector Machines that is used for regression. It tries to fit a hyperplane that maximizes the margin between the samples and the hyperplane. The mathematical formula for SVR is based on the optimization of a convex cost function.
 
-# CatBoost: 
-CatBoost is a gradient boosting algorithm specifically designed for categorical data. It uses a combination of decision trees and gradient descent to make predictions. The mathematical formula for CatBoost is based on gradient boosting and decision trees.
 
-# XGBoost: 
-XGBoost is another gradient boosting algorithm that is widely used in data science. Like CatBoost, it also uses gradient boosting with decision trees as its base model.
-# Deep Learning Neural Network:
-Deep Learning Neural Network (DLNN) is a type of artificial neural network (ANN) that is designed to mimic the structure and function of the human brain. It consists of multiple interconnected processing nodes, or neurons, that are organized into layers. The input layer receives the input data, and the output layer produces the prediction. The hidden layers are responsible for transforming the input into a form that can be used by the output layer to make the prediction. The neurons in each layer are connected to the neurons in the next layer through weighted connections, and the weights are adjusted during training to minimize the difference between the true and predicted values. DLNNs are capable of learning complex relationships in the data and can be used for a variety of tasks, including classification and regression. The mathematical formula for DLNNs involves the computation of dot products, activation functions, and backpropagation of errors for weight adjustment.
